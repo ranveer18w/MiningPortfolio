@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 213 54% 24%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 30 61% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    @apply antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .skill-bar {
+    @apply h-2 bg-accent rounded-sm overflow-hidden;
+  }
+  
+  .skill-level {
+    @apply h-full bg-secondary rounded-sm;
+  }
+
+  .section-divider {
+    @apply h-0.5 bg-accent my-6;
+  }
+
+  .timeline-item {
+    @apply relative pl-6;
+  }
+
+  .timeline-item::before {
+    content: "";
+    @apply absolute left-0 top-0 w-4 h-4 rounded-full bg-secondary border-2 border-primary;
+  }
+
+  .timeline-line {
+    @apply absolute left-[7px] top-4 w-0.5 h-[calc(100%-16px)] bg-primary;
+  }
+}
