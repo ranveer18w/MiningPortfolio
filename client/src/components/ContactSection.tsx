@@ -1,11 +1,5 @@
-import { PERSONAL_INFO, SOCIAL_LINKS } from '@/lib/constants';
-import { Phone, Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
-
-const iconMap: Record<string, React.ReactNode> = {
-  'linkedin': <Linkedin className="h-5 w-5" />,
-  'twitter': <Twitter className="h-5 w-5" />,
-  'github': <Github className="h-5 w-5" />
-};
+import { PERSONAL_INFO } from '@/lib/constants';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function ContactSection() {
   return (
@@ -47,26 +41,6 @@ export default function ContactSection() {
                   <h3 className="text-lg font-semibold text-primary mb-2">Address</h3>
                   <p className="text-text">{PERSONAL_INFO.address}</p>
                 </div>
-              </div>
-            </div>
-            
-            <div className="section-divider"></div>
-            
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-primary mb-4">Connect With Me</h3>
-              <div className="flex justify-center space-x-6">
-                {SOCIAL_LINKS.map((link, index) => (
-                  <a 
-                    key={index}
-                    href={link.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition"
-                    aria-label={`Visit my ${link.platform} profile`}
-                  >
-                    {iconMap[link.platform]}
-                  </a>
-                ))}
               </div>
             </div>
           </div>
